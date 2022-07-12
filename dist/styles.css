@@ -1,7 +1,49 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 30px 20px;
+}
+
+h1 {
+    font-size: 32px;
+    padding-top: 50px;
+    color: #fd7e14;
+}
+
+nav {
+    border-bottom: 1px solid grey;
+    padding-bottom: 50px;
+}
+
+form {
+    max-width: 768px;
+    border: 1px solid #198754;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+input, textarea { 
+    border-radius: 4px;
+    border: 1px solid #198754;
+    outline: none;
+}
+
+#title, #body {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+}
+
+button {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 20px;
 }
 
 ul {
@@ -10,39 +52,108 @@ ul {
 }
 
 li {
-    color: green;
+    color: #198754;
 }
 
-button {
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-}
-
-.getText {
+button.getText {
     background: #0dcaf0;
     color: black;
 }
 
-.getUsers {
+button.getUsers {
     background: #0d6efd;
     color: #ffffff;
 }
 
-.getPosts {
+button.getPosts {
     background: #198754;
     color: #ffffff;
 }
 
-input, textarea {
-    display: block;
-    margin-bottom: 20px;
-}
-
 input[type="submit"] {
-    background: #0d6efd;
+    background: #000000;
+    cursor: pointer;
     border: none;
     color: #ffffff;
     padding: 6px 12px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #0d6efd;
+}
+
+.getTextContent p {
+    font-size: 16px;
+}
+
+.output {
+    border: 1px solid #198754;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.output ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+.output ul li {
+    padding: 0 0 10px;
+    color: #000000;
+}
+
+.postCard, .getTextContent, .output ul {
+    padding: 16px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+}
+
+.postCard h3 { 
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.postCard p { 
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        padding-top: 0;
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    button {
+        margin: 0;
+    }
+
+    nav {        
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .output {
+        padding: 10px;
+    }
+
+    p {
+        line-height: 1.4;
+    }
 }

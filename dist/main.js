@@ -13,7 +13,10 @@ getTextBtn.addEventListener('click', () => {
     fetch('getText.txt')
     .then((res) => res.text())
     .then((data) => {
-        output.innerHTML = data;
+        output.innerHTML = `
+            <h2>Data Fetched from the Local Text File</h2>
+            <p class="getTextContent">${data}</p>
+        `;
     })
     .catch((err) => console.log(err))
 });
@@ -24,8 +27,9 @@ getUsersBtn.addEventListener('click', () => {
     fetch('users.json')
     .then((res) => res.json())
     .then((data) => {
+        output.innerHTML = `<h2>Data Fetched from the Local JSON File</h2>`;
         data.forEach(eachUser => {
-            output.innerHTML += `
+            output.innerHTML += `                
                 <ul>
                     <li>ID: ${eachUser.id}</li>
                     <li>NAME: ${eachUser.name}</li>
@@ -42,6 +46,7 @@ getPostsBtn.addEventListener('click', () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then((res) => res.json())
     .then((data) => {
+        output.innerHTML = `<h2>Data Fetched from the External API</h2>`;
         data.forEach(eachPost => {
             output.innerHTML += `
                 <div class="postCard">
