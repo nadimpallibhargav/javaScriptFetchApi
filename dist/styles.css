@@ -17,6 +17,7 @@ button {
     border: none;
     padding: 6px 12px;
     border-radius: 4px;
+    font-size: 12px;
 }
 
 .getText {
@@ -28,4 +29,10 @@ button {
     background: #0d6efd;
     color: #ffffff;
 }
+
+.getPosts {
+    background: #198754;
+    color: #ffffff;
+}
+
 
