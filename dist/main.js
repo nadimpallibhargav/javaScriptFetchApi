@@ -1,5 +1,6 @@
 const getTextBtn = document.querySelector('.getText');
-const output = document.querySelector('.output');
+const getUsersBtn = document.querySelector('.getUsers');
+let output = document.querySelector('.output');
 
 getTextBtn.addEventListener('click', () => {
     fetch('getText.txt')
@@ -8,4 +9,20 @@ getTextBtn.addEventListener('click', () => {
         output.innerHTML = data;
     })
     .catch((err) => console.log(err))
+});
+
+getUsersBtn.addEventListener('click', () => {
+    fetch('users.json')
+    .then((res) => res.json())
+    .then((data) => {
+        data.forEach(eachUser => {
+            output.innerHTML += `
+                <ul>
+                    <li>ID: ${eachUser.id}</li>
+                    <li>NAME: ${eachUser.name}</li>
+                    <li>EMAIL: ${eachUser.email}</li>
+                </ul>
+            `;
+        });
+    })
 });

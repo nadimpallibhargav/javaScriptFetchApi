@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "name":"arjun",
+        "email":"arjun@gmail.com"
+    },
+    {
+        "id":2,
+        "name":"bhema",
+        "email":"bhema@gmail.com"
+    },
+    {
+        "id":3,
+        "name":"yudhistara",
+        "email":"yudhistara@gmail.com"
+    },
+    {
+        "id":4,
+        "name":"sahadeva",
+        "email":"sahadeva@gmail.com"
+    },
+    {
+        "id":5,
+        "name":"nakula",
+        "email":"nakula@gmail.com"
+    }
+]
