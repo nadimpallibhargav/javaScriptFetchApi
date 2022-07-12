@@ -1,8 +1,12 @@
+// buttons
 const getTextBtn = document.querySelector('.getText');
 const getUsersBtn = document.querySelector('.getUsers');
 const getPostsBtn = document.querySelector('.getPosts');
+
+// output div 
 let output = document.querySelector('.output');
 
+// fetching local TEXT file data button
 getTextBtn.addEventListener('click', () => {
     fetch('getText.txt')
     .then((res) => res.text())
@@ -12,6 +16,7 @@ getTextBtn.addEventListener('click', () => {
     .catch((err) => console.log(err))
 });
 
+// fetching local JSON file data button
 getUsersBtn.addEventListener('click', () => {
     fetch('users.json')
     .then((res) => res.json())
@@ -28,6 +33,7 @@ getUsersBtn.addEventListener('click', () => {
     })
 });
 
+// fetching external API data
 getPostsBtn.addEventListener('click', () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then((res) => res.json())
