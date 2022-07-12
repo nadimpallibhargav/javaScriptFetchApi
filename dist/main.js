@@ -2,11 +2,13 @@
 const getTextBtn = document.querySelector('.getText');
 const getUsersBtn = document.querySelector('.getUsers');
 const getPostsBtn = document.querySelector('.getPosts');
+const form = document.querySelector('#postForm');
 
 // output div 
 let output = document.querySelector('.output');
+ 
 
-// fetching local TEXT file data button
+//////////////////////////////////////////////////////////////////////// fetching local TEXT file data button
 getTextBtn.addEventListener('click', () => {
     fetch('getText.txt')
     .then((res) => res.text())
@@ -16,7 +18,8 @@ getTextBtn.addEventListener('click', () => {
     .catch((err) => console.log(err))
 });
 
-// fetching local JSON file data button
+
+//////////////////////////////////////////////////////////////////////// fetching local JSON file data button
 getUsersBtn.addEventListener('click', () => {
     fetch('users.json')
     .then((res) => res.json())
@@ -33,7 +36,8 @@ getUsersBtn.addEventListener('click', () => {
     })
 });
 
-// fetching external API data
+
+//////////////////////////////////////////////////////////////////////// fetching external API data
 getPostsBtn.addEventListener('click', () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then((res) => res.json())
@@ -47,4 +51,25 @@ getPostsBtn.addEventListener('click', () => {
             `;
         });
     })
+});
+
+
+//////////////////////////////////////////////////////////////////////// post request to the api for adding the new post and content
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let title = document.querySelector('#title').value;
+    let body = document.querySelector('#body').value;
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',                                         // http request method
+        headers: {
+            'Accept': 'application/json, text/plain, */*',      // indicates what kind of response a client can accept from the server
+            'Content-type': 'application/json'                  // provides the actual content type of the returned content
+        },
+        body: JSON.stringify({postTitle:title, content:body})   // convert the user input text to JSON format
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+
 });
